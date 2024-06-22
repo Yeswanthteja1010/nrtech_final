@@ -11,7 +11,7 @@ environ.Env.read_env()
 SECRET_KEY = config('SECRET_KEY')
 
 #DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -65,26 +65,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djecommerce.wsgi.application'
 
-import dj_database_url
+"""import dj_database_url
 DATABASES = {
     'default': dj_database_url.parse('postgresql://nrtech_user:KpdiJQhgQHaimUwr95SO2lIgKkEH9VzC@dpg-cpr5mblumphs73bvnid0-a.ohio-postgres.render.com/nrtech')
 }
+"""
 
-
-"""DATABASES = {
+DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nrtech_example',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Teja@1010',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'PASSWORD': 'IyzjSDNQxlNRYfQpsuxcgUDdMBIJDAOd',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '48711'
     }
 }
-"""
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -96,8 +96,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build ','static_in_env')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
 
 # Auth
 AUTHENTICATION_BACKENDS = (
@@ -141,3 +143,4 @@ DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
     'SHOW_TOOLBAR_CALLBACK': show_toolbar
 }
+
