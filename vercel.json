@@ -23,11 +23,5 @@
     "src": "/(.*)",
     "dest": "djecommerce/wsgi.py"
     }
-    ],
-    "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+    ]
     }
